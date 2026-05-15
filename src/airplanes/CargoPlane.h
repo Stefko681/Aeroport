@@ -10,7 +10,7 @@ class CargoPlane : public Airplane {
     double maxWeight;
 
 public:
-    CargoPlane(std::string airplaneId, std::string model, double health, double maxWeigh);
+    CargoPlane(std::string airplaneId, std::string model, double health, double maxWeight);
 
     [[nodiscard]] AirplaneType getAirplaneType() const override;
 

@@ -3,7 +3,6 @@
 //
 
 #include "PassengerPlane.h"
-
 #include <stdexcept>
 
 PassengerPlane::PassengerPlane(std::string airplaneId, std::string model, const int health,
@@ -14,7 +13,7 @@ PassengerPlane::PassengerPlane(std::string airplaneId, std::string model, const 
 
 void PassengerPlane::completeFlight() {
     if (!canFly()) throw std::runtime_error("Not enough health for flying");
-    health -= 0.35;
+    health -= 35;
 }
 
 bool PassengerPlane::canLand(const Runway &runway) const {

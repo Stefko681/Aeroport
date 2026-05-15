@@ -14,14 +14,20 @@ protected:
     std::string passengerName;
     std::string flightId;
     double paidPrice;
-    double weight;
+    double extraLuggageWeight;
 
 public:
-    Ticket(std::string passengerName, std::string flightId, double paidPrice, double weight);
+    Ticket(std::string passengerName, std::string flightId, double paidPrice);
 
     virtual ~Ticket() = default;
 
     virtual TicketType getTicketType() const = 0;
+
+    virtual bool isRefundable() const = 0;
+
+    virtual double getTotalLuggageWeight() const = 0;
+
+    void addExtraLuaggage(double weight);
 };
 
 

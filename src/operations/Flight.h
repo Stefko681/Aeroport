@@ -7,7 +7,7 @@
 #include <memory>
 #include "Airline.h"
 #include "tickets/Ticket.h"
-#include "../infrastructures/flightStatus.h"
+#include "flightStatus.h"
 #include <string>
 #include <vector>
 

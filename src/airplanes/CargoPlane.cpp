@@ -6,9 +6,9 @@
 #include <stdexcept>
 
 CargoPlane::CargoPlane(std::string airplaneId, std::string model, const double health,
-                       const double maxWeigh) : Airplane(std::move(airplaneId), std::move(model), health),
-                                                maxWeight(maxWeigh) {
-    if (maxWeigh <= 0) throw std::invalid_argument("Max Weigh can not be less or equal to zero");
+                       const double maxWeight) : Airplane(std::move(airplaneId), std::move(model), health),
+                                                 maxWeight(maxWeight) {
+    if (maxWeight <= 0) throw std::invalid_argument("Max Weigh can not be less or equal to zero");
 }
 
 AirplaneType CargoPlane::getAirplaneType() const {
@@ -25,5 +25,5 @@ void CargoPlane::completeFlight() {
 }
 
 bool CargoPlane::canLand(const Runway &runway) const {
-    return runway.getLength() >= 3000 && runway.getHasHeavyDuty() == true;
+    return runway.getLength() >= 3000 && runway.getHasHeavyDuty();
 }

@@ -7,6 +7,14 @@
 #include "Ticket.h"
 
 class StandardTicket : public Ticket {
+public:
+    StandardTicket(std::string passengerName, std::string flightId, double basePrice);
+
+    TicketType getTicketType() const override;
+
+    bool isRefundable() const override;
+
+    double getTotalLuggageWeight() const override;
 };
 
 

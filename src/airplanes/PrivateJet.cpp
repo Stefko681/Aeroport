@@ -3,7 +3,6 @@
 //
 
 #include "PrivateJet.h"
-
 #include <stdexcept>
 
 PrivateJet::PrivateJet(std::string airplaneId, std::string model, const double health) : Airplane(std::move(airplaneId),

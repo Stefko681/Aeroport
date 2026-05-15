@@ -7,6 +7,14 @@
 #include "Ticket.h"
 
 class VIPTicket : public Ticket {
+public:
+    VIPTicket(std::string passengerName, std::string flightId, double basePrice);
+
+    TicketType getTicketType() const override;
+
+    bool isRefundable() const override;
+
+    double getTotalLuggageWeight() const override;
 };
 
 
