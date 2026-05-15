@@ -20,7 +20,7 @@ protected:
     Airplane *airplane{nullptr};
 
 public:
-    Runway(std::string runwayId, double length, RunwayStatus &runwayStatus, bool hasILS = false,
+    Runway(std::string runwayId, double length, bool hasILS = false,
            bool hasVIPTerminal = false,
            bool hasHeavyDuty = false);
 

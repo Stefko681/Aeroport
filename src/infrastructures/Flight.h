@@ -14,14 +14,14 @@
 class Flight {
 protected:
     std::string flightId;
-    Airplane &airplane;
+    Airplane *airplane;
     std::string destination;
     double basePrice;
     std::vector<std::unique_ptr<Ticket> > soldTickets;
     flightStatus flightStatus;
 
 public:
-    Flight(std::string flightId, std::string destination, double bestPrice);
+    Flight(std::string flightId,Airplane *airplane, std::string destination, double bestPrice);
 };
 
 

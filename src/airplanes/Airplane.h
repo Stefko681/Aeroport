@@ -12,12 +12,13 @@ protected:
     std::string airplaneId;
     std::string model;
     int health;
-    AirplaneType airplaneType;
 
 public:
     Airplane(std::string airplaneId, std::string model, int health);
 
     virtual ~Airplane() = default;
+
+    virtual AirplaneType getAirplaneType() const = 0;
 };
 
 

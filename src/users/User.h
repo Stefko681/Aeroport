@@ -11,12 +11,13 @@ class User {
 protected:
     std::string name;
     std::string password;
-    UserRole userRole;
 
 public:
     User(std::string name, std::string password);
 
     virtual ~User() = default;
+
+    virtual UserRole getUserRole() const = 0;
 
     virtual void logout() const = 0;
 

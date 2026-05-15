@@ -13,7 +13,6 @@ class Ticket {
 protected:
     std::string passengerName;
     std::string flightId;
-    TicketType ticketType;
     double paidPrice;
     double weight;
 
@@ -21,6 +20,8 @@ public:
     Ticket(std::string passengerName, std::string flightId, double paidPrice, double weight);
 
     virtual ~Ticket() = default;
+
+    virtual TicketType getTicketType() const = 0;
 };
 
 
