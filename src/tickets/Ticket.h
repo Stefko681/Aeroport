@@ -4,22 +4,23 @@
 
 #ifndef AEROPORT_TICKET_H
 #define AEROPORT_TICKET_H
-#include <ranges>
-
 #include "TicketType.h"
 #include "infrastructures/Flight.h"
 #include <string>
 
+
 class Ticket {
 protected:
     std::string passengerName;
-    Flight flight;
+    std::string flightId;
     TicketType ticketType;
     double paidPrice;
     double weight;
 
 public:
-    Ticket(std::string &passengerName, Flight &flight, TicketType &ticketType, double paidPrice, double weight);
+    Ticket(std::string passengerName, std::string flightId, double paidPrice, double weight);
+
+    virtual ~Ticket() = default;
 };
 
 

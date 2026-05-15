@@ -15,7 +15,9 @@ protected:
     AirplaneType airplaneType;
 
 public:
-    Airplane(std::string &airplaneId, std::string &model, int health, AirplaneType &airplaneType);
+    Airplane(std::string airplaneId, std::string model, int health);
+
+    virtual ~Airplane() = default;
 };
 
 

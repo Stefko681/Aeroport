@@ -44,8 +44,6 @@ add_executable(aeroport src/main.cpp
         src/infrastructures/flightStatus.h
         src/infrastructures/RunwayStatus.cpp
         src/infrastructures/RunwayStatus.h
-        src/infrastructures/RunwayModuls.cpp
-        src/infrastructures/RunwayModuls.h
         src/infrastructures/Hangar.cpp
         src/infrastructures/Hangar.h
         src/airplanes/AirplaneType.cpp

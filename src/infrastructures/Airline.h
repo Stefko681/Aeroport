@@ -18,8 +18,7 @@ protected:
     std::vector<std::unique_ptr<Flight> > flights;
 
 public:
-    Airline(std::string &name, double balance, std::vector<std::unique_ptr<Airplane> > airplanes,
-            std::vector<std::unique_ptr<Flight> > flights);
+    Airline(std::string name, double balance);
 };
 
 

@@ -5,19 +5,26 @@
 #ifndef AEROPORT_RUNWAY_H
 #define AEROPORT_RUNWAY_H
 #include "RunwayStatus.h"
-#include "RunwayModuls.h"
+#include "Airline.h"
+#include <string>
 
 class Runway {
 protected:
-    int runwayId;
+    std::string runwayId;
     double length;
     RunwayStatus runwayStatus;
-    RunwayModuls runwayModuls;
+    bool hasILS;
+    bool hasVIPTerminal;
+    bool hasHeavyDuty;
 
-    bool isOccupied();
+    Airplane *airplane{nullptr};
 
 public:
-    Runway(int runwayId, double length, RunwayStatus &runwayStatus, RunwayModuls &runwayModuls);
+    Runway(std::string runwayId, double length, RunwayStatus &runwayStatus, bool hasILS = false,
+           bool hasVIPTerminal = false,
+           bool hasHeavyDuty = false);
+
+    virtual ~Runway() = default;
 };
 
 

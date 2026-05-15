@@ -14,15 +14,15 @@ protected:
     UserRole userRole;
 
 public:
-    User(std::string &name, std::string &password, UserRole &userRole);
+    User(std::string name, std::string password);
+
+    virtual ~User() = default;
 
     virtual void logout() const = 0;
 
     virtual void help() const = 0;
 
     virtual void viewProfile() const = 0;
-
-    virtual ~User() = default;
 };
 
 

@@ -13,7 +13,7 @@ protected:
     double fee;
 
 public:
-    Hangar(std::string &hangarId, int capacity, double fee);
+    Hangar(std::string hangarId, int capacity, double fee);
 };
 
 

@@ -13,7 +13,7 @@
 
 class Flight {
 protected:
-    static std::string flightId;
+    std::string flightId;
     Airplane &airplane;
     std::string destination;
     double basePrice;
@@ -21,8 +21,7 @@ protected:
     flightStatus flightStatus;
 
 public:
-    Flight(std::string &flightId, Airplane &airplane, std::string &destination, double bestPrice,
-           std::vector<std::unique_ptr<Ticket> > soldTickets, enum flightStatus &flightStatus);
+    Flight(std::string flightId, std::string destination, double bestPrice);
 };
 
 
