@@ -13,7 +13,7 @@ private:
 public:
     PassengerPlane(std::string airplaneId, std::string model, int health, int maxPassengers);
 
-    [[nodiscard]] bool canLand(double length, bool hasVIPTerminal) const override;
+    [[nodiscard]] bool canLand(const Runway &runway) const override;
 
     void completeFlight() override;
 

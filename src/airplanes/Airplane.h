@@ -6,6 +6,7 @@
 #define AEROPORT_AIRCRAFT_H
 #include <string>
 #include "AirplaneType.h"
+#include "infrastructures/Runway.h"
 
 class Airplane {
 protected:
@@ -20,7 +21,7 @@ public:
 
     [[nodiscard]] virtual AirplaneType getAirplaneType() const = 0;
 
-    [[nodiscard]] virtual bool canLand(double length, bool hasVIPTerminal) const = 0;
+    [[nodiscard]] virtual bool canLand(const Runway &runway) const = 0;
 
     virtual void completeFlight() = 0;
 

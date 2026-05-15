@@ -7,14 +7,14 @@
 #include "Airplane.h"
 
 class CargoPlane : public Airplane {
-    double maxWeigh;
+    double maxWeight;
 
 public:
     CargoPlane(std::string airplaneId, std::string model, double health, double maxWeigh);
 
     [[nodiscard]] AirplaneType getAirplaneType() const override;
 
-    [[nodiscard]] bool canLand(double length, bool hasVIPTerminal) const override;
+    [[nodiscard]] bool canLand(const Runway &runway) const override;
 
     void completeFlight() override;
 

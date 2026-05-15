@@ -7,7 +7,7 @@
 
 CargoPlane::CargoPlane(std::string airplaneId, std::string model, const double health,
                        const double maxWeigh) : Airplane(std::move(airplaneId), std::move(model), health),
-                                                maxWeigh(maxWeigh) {
+                                                maxWeight(maxWeigh) {
     if (maxWeigh <= 0) throw std::invalid_argument("Max Weigh can not be less or equal to zero");
 }
 
@@ -16,14 +16,14 @@ AirplaneType CargoPlane::getAirplaneType() const {
 }
 
 double CargoPlane::airportFee(const double ticketRevenue) const {
-    return maxWeigh;
+    return 15 * maxWeight;
 }
 
 void CargoPlane::completeFlight() {
     if (!canFly()) throw std::runtime_error("Not enough heath for flying");
-    health -= (0.45 * health);
+    health -= 45;
 }
 
-bool CargoPlane::canLand(const double length, bool hasVIPTerminal) const {
-    return length >= 3000;
+bool CargoPlane::canLand(const Runway &runway) const {
+    return runway.getLength() >= 3000 && runway.getHasHeavyDuty() == true;
 }

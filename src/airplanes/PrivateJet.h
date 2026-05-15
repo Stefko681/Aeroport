@@ -10,9 +10,9 @@ class PrivateJet : public Airplane {
     int capacity = 12;
 
 public:
-    PrivateJet(std::string airplaneId, std::string model, double health, int capacity = 12);
+    PrivateJet(std::string airplaneId, std::string model, double health);
 
-    [[nodiscard]] bool canLand(double length, bool hasVIPTerminal) const override;
+    [[nodiscard]] bool canLand(const Runway &runway) const override;
 
     [[nodiscard]] double airportFee(double ticketRevenue) const override;
 

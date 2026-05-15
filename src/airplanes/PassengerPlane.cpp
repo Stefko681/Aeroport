@@ -8,17 +8,17 @@
 
 PassengerPlane::PassengerPlane(std::string airplaneId, std::string model, const int health,
                                const int maxPassengers) : Airplane(std::move(airplaneId), std::move(model), health),
-                                                          maxPassengers() {
+                                                          maxPassengers(maxPassengers) {
     if (maxPassengers <= 0) throw std::invalid_argument("Max Passengers can not be less or equal to 0");
 }
 
 void PassengerPlane::completeFlight() {
     if (!canFly()) throw std::runtime_error("Not enough health for flying");
-    health -= (0.35 * health);
+    health -= 0.35;
 }
 
-bool PassengerPlane::canLand(const double length, bool hasVIPTerminal) const {
-    return length >= 2000;
+bool PassengerPlane::canLand(const Runway &runway) const {
+    return runway.getLength() >= 2000;
 }
 
 double PassengerPlane::airportFee(const double ticketRevenue) const {
