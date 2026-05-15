@@ -1,0 +1,26 @@
+//
+// Created by stefko on 5/15/26.
+//
+
+#ifndef AEROPORT_AIRLINE_H
+#define AEROPORT_AIRLINE_H
+#include <memory>
+#include <string>
+#include <vector>
+#include "airplanes/Airplane.h"
+#include "Flight.h"
+
+class Airline {
+protected:
+    std::string name;
+    double balance;
+    std::vector<std::unique_ptr<Airplane> > airplanes;
+    std::vector<std::unique_ptr<Flight> > flights;
+
+public:
+    Airline(std::string &name, double balance, std::vector<std::unique_ptr<Airplane> > airplanes,
+            std::vector<std::unique_ptr<Flight> > flights);
+};
+
+
+#endif //AEROPORT_AIRLINE_H
