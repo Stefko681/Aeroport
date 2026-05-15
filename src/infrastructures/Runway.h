@@ -5,7 +5,7 @@
 #ifndef AEROPORT_RUNWAY_H
 #define AEROPORT_RUNWAY_H
 #include "RunwayStatus.h"
-#include "Airline.h"
+#include "../operations/Airline.h"
 #include <string>
 
 class Runway {

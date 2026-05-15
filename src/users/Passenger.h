@@ -4,9 +4,9 @@
 
 #ifndef AEROPORT_PASSENGER_H
 #define AEROPORT_PASSENGER_H
-#include "../../User.h"
+#include "User.h"
 #include "../tickets/Ticket.h"
-#include "../infrastructures/Flight.h"
+#include "../operations/Flight.h"
 #include <vector>
 #include <string>
 #include <memory>
@@ -16,7 +16,7 @@ class Passenger : public User {
     std::vector<std::unique_ptr<Ticket> > tickets_;
 
 public:
-    Passenger(std::string name, std::string password, UserRole userRole, double funds);
+    Passenger(std::string name, std::string password, double funds);
 
     ~Passenger() override = default;
 

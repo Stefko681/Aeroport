@@ -11,14 +11,22 @@ class Airplane {
 protected:
     std::string airplaneId;
     std::string model;
-    int health;
+    double health;
 
 public:
-    Airplane(std::string airplaneId, std::string model, int health);
+    Airplane(std::string airplaneId, std::string model, double health);
 
     virtual ~Airplane() = default;
 
-    virtual AirplaneType getAirplaneType() const = 0;
+    [[nodiscard]] virtual AirplaneType getAirplaneType() const = 0;
+
+    [[nodiscard]] virtual bool canLand(double length, bool hasVIPTerminal) const = 0;
+
+    virtual void completeFlight() = 0;
+
+    [[nodiscard]] virtual double airportFee(double ticketRevenue) const = 0;
+
+    [[nodiscard]] bool canFly() const;
 };
 
 

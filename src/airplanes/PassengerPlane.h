@@ -7,6 +7,19 @@
 #include "Airplane.h"
 
 class PassengerPlane : public Airplane {
+private:
+    int maxPassengers;
+
+public:
+    PassengerPlane(std::string airplaneId, std::string model, int health, int maxPassengers);
+
+    [[nodiscard]] bool canLand(double length, bool hasVIPTerminal) const override;
+
+    void completeFlight() override;
+
+    [[nodiscard]] double airportFee(double ticketRevenue) const override;
+
+    [[nodiscard]] AirplaneType getAirplaneType() const override;
 };
 
 

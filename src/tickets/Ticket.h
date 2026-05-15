@@ -5,7 +5,7 @@
 #ifndef AEROPORT_TICKET_H
 #define AEROPORT_TICKET_H
 #include "TicketType.h"
-#include "infrastructures/Flight.h"
+#include "../operations/Flight.h"
 #include <string>
 
 

@@ -34,14 +34,14 @@ add_executable(aeroport src/main.cpp
         src/tickets/TicketType.h
         src/core/Airport.cpp
         src/core/Airport.h
-        src/infrastructures/Airline.cpp
-        src/infrastructures/Airline.h
-        src/infrastructures/Flight.cpp
-        src/infrastructures/Flight.h
+        src/operations/Airline.cpp
+        src/operations/Airline.h
+        src/operations/Flight.cpp
+        src/operations/Flight.h
         src/infrastructures/Runway.cpp
         src/infrastructures/Runway.h
-        src/infrastructures/flightStatus.cpp
-        src/infrastructures/flightStatus.h
+        src/operations/flightStatus.cpp
+        src/operations/flightStatus.h
         src/infrastructures/RunwayStatus.cpp
         src/infrastructures/RunwayStatus.h
         src/infrastructures/Hangar.cpp

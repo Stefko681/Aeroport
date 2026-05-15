@@ -7,7 +7,7 @@
 #include <memory>
 #include "Airline.h"
 #include "tickets/Ticket.h"
-#include "flightStatus.h"
+#include "../infrastructures/flightStatus.h"
 #include <string>
 #include <vector>
 
@@ -21,7 +21,7 @@ protected:
     flightStatus flightStatus;
 
 public:
-    Flight(std::string flightId,Airplane *airplane, std::string destination, double bestPrice);
+    Flight(std::string flightId, Airplane *airplane, std::string destination, double bestPrice);
 };
 
 
