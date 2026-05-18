@@ -40,14 +40,16 @@ add_executable(aeroport src/main.cpp
         src/operations/Flight.h
         src/infrastructures/Runway.cpp
         src/infrastructures/Runway.h
-        src/operations/flightStatus.cpp
-        src/operations/flightStatus.h
+        src/operations/FlightStatus.cpp
+        src/operations/FlightStatus.h
         src/infrastructures/RunwayStatus.cpp
         src/infrastructures/RunwayStatus.h
         src/infrastructures/Hangar.cpp
         src/infrastructures/Hangar.h
         src/airplanes/AirplaneType.cpp
         src/airplanes/AirplaneType.h
+        src/tickets/TicketFactory.cpp
+        src/tickets/TicketFactory.h
 )
 
 target_include_directories(aeroport PRIVATE src)

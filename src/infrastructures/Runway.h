@@ -5,8 +5,9 @@
 #ifndef AEROPORT_RUNWAY_H
 #define AEROPORT_RUNWAY_H
 #include "RunwayStatus.h"
-#include "operations/Airline.h"
 #include <string>
+
+class Airplane;
 
 class Runway {
 protected:
@@ -16,8 +17,7 @@ protected:
     bool hasILS;
     bool hasVIPTerminal;
     bool hasHeavyDuty;
-
-    Airline *airplane{nullptr};
+    Airplane *airplane{nullptr};
 
 public:
     Runway(std::string runwayId, double length, bool hasILS = false,

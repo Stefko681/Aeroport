@@ -6,7 +6,7 @@
 #define AEROPORT_FLIGHTSTATUS_H
 
 
-enum class flightStatus {
+enum class FlightStatus {
     Scheduled,
     Boarding,
     Delayed,

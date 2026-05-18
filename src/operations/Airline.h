@@ -7,11 +7,11 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include "airplanes/Airplane.h"
-#include "Flight.h"
+
+class Airplane;
+class Flight;
 
 class Airline {
-protected:
     std::string name;
     double balance;
     std::vector<std::unique_ptr<Airplane> > airplanes;
@@ -19,6 +19,8 @@ protected:
 
 public:
     Airline(std::string name, double balance);
+
+    ~Airline() = default;
 };
 
 

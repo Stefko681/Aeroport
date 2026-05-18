@@ -5,26 +5,50 @@
 #ifndef AEROPORT_PASSENGER_H
 #define AEROPORT_PASSENGER_H
 #include "User.h"
-#include "../tickets/Ticket.h"
-#include "../operations/Flight.h"
+#include "tickets/TicketType.h"
 #include <vector>
 #include <string>
 #include <memory>
 
+class Ticket;
+class Flight;
+
 class Passenger : public User {
     double funds;
-    std::vector<std::unique_ptr<Ticket> > tickets_;
+    std::vector<std::unique_ptr<Ticket> > passengerTickets;
 
 public:
-    Passenger(std::string name, std::string password, double funds);
+    Passenger(std::string name, std::string password, double funds = 0.0);
 
     ~Passenger() override = default;
 
-    void addFunds(double amount);
+    Passenger(const Passenger &other) = delete;
 
-    void bookTicket(Flight &flight, TicketType &ticketTYpe);
+    Passenger &operator=(const Passenger &other) = delete;
 
+    Passenger(Passenger &&other) noexcept = default;
 
+    Passenger &operator=(Passenger &&) noexcept = default;
+
+    [[nodiscard]] UserRole getUserRole() const override;
+
+    void logout() const override;
+
+    void help() const override;
+
+    void viewProfile() const override;
+
+    void addFunds(double amount) const;
+
+    void bookTicket(Flight &flight, TicketType ticketType);
+
+    void upgradeTicket(Flight &flight, TicketType newTicketType);
+
+    void addBaggage(Flight &flight, double extraWeight);
+
+    void cancelTicket(Flight &flight);
+
+    void printMyTickets() const;
 };
 
 

@@ -5,7 +5,7 @@
 #include "PassengerPlane.h"
 #include <stdexcept>
 
-PassengerPlane::PassengerPlane(std::string airplaneId, std::string model, const int health,
+PassengerPlane::PassengerPlane(std::string airplaneId, std::string model, const double health,
                                const int maxPassengers) : Airplane(std::move(airplaneId), std::move(model), health),
                                                           maxPassengers(maxPassengers) {
     if (maxPassengers <= 0) throw std::invalid_argument("Max Passengers can not be less or equal to 0");

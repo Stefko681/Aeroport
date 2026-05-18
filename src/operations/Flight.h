@@ -6,10 +6,10 @@
 #define AEROPORT_FLIGHT_H
 #include <memory>
 #include "Airline.h"
-#include "tickets/Ticket.h"
-#include "flightStatus.h"
+#include "FlightStatus.h"
 #include <string>
 #include <vector>
+class Ticket;
 
 class Flight {
 protected:
@@ -17,11 +17,23 @@ protected:
     Airplane *airplane;
     std::string destination;
     double basePrice;
-    std::vector<std::unique_ptr<Ticket> > soldTickets;
-    flightStatus flightStatus;
+    std::vector<Ticket *> soldTickets;
+    FlightStatus flightStatus;
 
 public:
     Flight(std::string flightId, Airplane *airplane, std::string destination, double bestPrice);
+
+    bool hasAvailableSeats() const;
+
+    const std::string getFlightId() const;
+
+    double getBasePrice() const;
+
+    void registerSoldTicket(Ticket *ticket);
+
+    void replaceSoldTicket(const Ticket *oldTicket, Ticket *newTicket);
+
+    void unregisterSoldTicket(Ticket *ticketToRemove);
 };
 
 

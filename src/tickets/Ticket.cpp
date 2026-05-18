@@ -10,3 +10,7 @@ Ticket::Ticket(std::string passengerName, std::string flightId, const double pai
         throw std::invalid_argument("Name and ID cannot be empty");
     if (paidPrice <= 0) throw std::invalid_argument("Paid price cannot be less or equal to zero");
 }
+
+double Ticket::getPaidPrice() const {
+    return paidPrice;
+}

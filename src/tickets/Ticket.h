@@ -21,13 +21,17 @@ public:
 
     virtual ~Ticket() = default;
 
-    virtual TicketType getTicketType() const = 0;
+    [[nodiscard]] virtual TicketType getTicketType() const = 0;
 
-    virtual bool isRefundable() const = 0;
+    [[nodiscard]] virtual bool isRefundable() const = 0;
 
-    virtual double getTotalLuggageWeight() const = 0;
+    [[nodiscard]] virtual double getTotalLuggageWeight() const = 0;
 
-    void addExtraLuaggage(double weight);
+    void addExtraBaggage(double weight);
+
+    const std::string getFlightId() const;
+
+    double getPaidPrice() const;
 };
 
 
