@@ -4,10 +4,9 @@
 
 #ifndef AEROPORT_TICKET_H
 #define AEROPORT_TICKET_H
+#pragma once
 #include "TicketType.h"
-#include "../operations/Flight.h"
 #include <string>
-
 
 class Ticket {
 protected:
@@ -29,10 +28,11 @@ public:
 
     void addExtraBaggage(double weight);
 
-    const std::string getFlightId() const;
+    [[nodiscard]] double getPaidPrice() const;
 
-    double getPaidPrice() const;
+    [[nodiscard]] const std::string &getFlightId() const;
+
+    [[nodiscard]] const std::string &getPassengerName() const;
 };
-
 
 #endif //AEROPORT_TICKET_H

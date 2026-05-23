@@ -4,7 +4,7 @@
 
 #ifndef AEROPORT_AIRPORTAUTHORITY_H
 #define AEROPORT_AIRPORTAUTHORITY_H
-#include "../../User.h"
+#include "User.h"
 
 class AirportAuthority : public User {
 };

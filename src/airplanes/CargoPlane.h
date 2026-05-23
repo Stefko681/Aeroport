@@ -16,10 +16,13 @@ public:
 
     [[nodiscard]] bool canLand(const Runway &runway) const override;
 
-    void completeFlight() override;
-
     [[nodiscard]] double airportFee(double ticketRevenue) const override;
-};
 
+    [[nodiscard]] int getCapacity() const override;
+
+    std::unique_ptr<Airplane> clone(std::string newId) const override;
+
+    void completeFlight() override;
+};
 
 #endif //AEROPORT_CARGOPLANE_H

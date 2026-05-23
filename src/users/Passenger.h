@@ -4,29 +4,35 @@
 
 #ifndef AEROPORT_PASSENGER_H
 #define AEROPORT_PASSENGER_H
+#pragma once
 #include "User.h"
 #include "tickets/TicketType.h"
-#include <vector>
-#include <string>
 #include <memory>
+#include <string>
+#include <vector>
 
 class Ticket;
 class Flight;
 
 class Passenger : public User {
+    struct TicketEntry {
+        std::unique_ptr<Ticket> ticket;
+        Flight *flight;
+    };
+
     double funds;
-    std::vector<std::unique_ptr<Ticket> > passengerTickets;
+    std::vector<TicketEntry> passengerTickets;
 
 public:
-    Passenger(std::string name, std::string password, double funds = 0.0);
+    explicit Passenger(std::string name, std::string password, double funds = 0.0);
 
     ~Passenger() override = default;
 
-    Passenger(const Passenger &other) = delete;
+    Passenger(const Passenger &) = delete;
 
-    Passenger &operator=(const Passenger &other) = delete;
+    Passenger &operator=(const Passenger &) = delete;
 
-    Passenger(Passenger &&other) noexcept = default;
+    Passenger(Passenger &&) noexcept = default;
 
     Passenger &operator=(Passenger &&) noexcept = default;
 
@@ -38,18 +44,21 @@ public:
 
     void viewProfile() const override;
 
-    void addFunds(double amount) const;
+    void addFunds(double amount);
 
     void bookTicket(Flight &flight, TicketType ticketType);
 
     void upgradeTicket(Flight &flight, TicketType newTicketType);
 
-    void addBaggage(Flight &flight, double extraWeight);
+    void addBaggage(const Flight &flight, double extraWeight);
 
     void cancelTicket(Flight &flight);
 
     void printMyTickets() const;
-};
 
+    [[nodiscard]] double getFunds() const;
+
+    void forceRefundTicket(const std::string &flightId, double amount);
+};
 
 #endif //AEROPORT_PASSENGER_H

@@ -4,12 +4,13 @@
 
 #ifndef AEROPORT_FLIGHT_H
 #define AEROPORT_FLIGHT_H
-#include <memory>
-#include "Airline.h"
 #include "FlightStatus.h"
+#include "airplanes/AirplaneType.h"
 #include <string>
 #include <vector>
+
 class Ticket;
+class Airplane;
 
 class Flight {
 protected:
@@ -21,13 +22,32 @@ protected:
     FlightStatus flightStatus;
 
 public:
-    Flight(std::string flightId, Airplane *airplane, std::string destination, double bestPrice);
+    Flight(std::string flightId, Airplane *airplane,
+           std::string destination, double basePrice);
 
-    bool hasAvailableSeats() const;
+    [[nodiscard]] bool hasAvailableSeats() const;
 
-    const std::string getFlightId() const;
+    [[nodiscard]] const std::string &getFlightId() const;
 
-    double getBasePrice() const;
+    [[nodiscard]] const std::string &getDestination() const;
+
+    [[nodiscard]] double getBasePrice() const;
+
+    [[nodiscard]] FlightStatus getFlightStatus() const;
+
+    [[nodiscard]] AirplaneType getAirplaneType() const;
+
+    [[nodiscard]] Airplane *getAirplane() const;
+
+    [[nodiscard]] const std::vector<Ticket *> &getSoldTickets() const;
+
+    [[nodiscard]] double getTotalTicketRevenue() const;
+
+    [[nodiscard]] double getAirportTax() const;
+
+    [[nodiscard]] double getNetProfit() const;
+
+    void setFlightStatus(FlightStatus status);
 
     void registerSoldTicket(Ticket *ticket);
 

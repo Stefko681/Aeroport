@@ -20,17 +20,24 @@ protected:
     Airplane *airplane{nullptr};
 
 public:
-    Runway(std::string runwayId, double length, bool hasILS = false,
-           bool hasVIPTerminal = false,
-           bool hasHeavyDuty = false);
+    Runway(std::string runwayId, double length,
+           bool hasILS = false, bool hasVIPTerminal = false, bool hasHeavyDuty = false);
 
     virtual ~Runway() = default;
 
-    double getLength() const;
+    [[nodiscard]] const std::string &getRunwayId() const;
 
-    bool getHasVIPTerminal() const;
+    [[nodiscard]] double getLength() const;
 
-    bool getHasHeavyDuty() const;
+    [[nodiscard]] RunwayStatus getStatus() const;
+
+    [[nodiscard]] bool getHasILS() const;
+
+    [[nodiscard]] bool getHasVIPTerminal() const;
+
+    [[nodiscard]] bool getHasHeavyDuty() const;
+
+    [[nodiscard]] Airplane *getAirplane() const;
 };
 
 
